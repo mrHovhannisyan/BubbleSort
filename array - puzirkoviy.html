@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<p id="entry"></p>
+		<button onclick="myFunction()">Sort</button>
+		<p id="result"></p>
+	</body>
+</html>
+
+<script>
+var Numbers = [];
+for (i = 0; i < 10; i++) { 
+	Numbers.push((parseInt((Math.random() * (100 - 0) + 0))));
+}
+document.getElementById("entry").innerText = Numbers;
+
+function myFunction() {
+	for (j=0; j < Numbers.length; j++) {
+		for (i=0; i < Numbers.length; i++) {
+			if (Numbers[i] >= Numbers[i+1]) {
+			a = Numbers[i];			
+			Numbers[i] = Numbers[i+1];
+			Numbers[i+1] = a;
+			}	
+		}
+	}
+    document.getElementById("result").innerText = Numbers;
+}
+</script>
